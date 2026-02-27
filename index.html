@@ -4,60 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atul Sharma | Backend & Data Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="bg-gray-950 text-gray-200">
+<body class="bg-gradient-to-b from-white via-indigo-50/30 to-cyan-50/20 text-zinc-900 antialiased">
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text">
+  <section class="relative overflow-hidden min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-zinc-50 to-white"></div>
+    <h1 class="text-6xl md:text-8xl lg:text-[7rem] tracking-tight font-semibold leading-none bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent">
       Atul Sharma
     </h1>
-    <p class="mt-6 text-xl md:text-2xl text-gray-400">
+    <p class="mt-6 text-xl md:text-3xl font-medium text-zinc-600">
       Senior Backend & Data Engineer
     </p>
-    <p class="mt-4 max-w-2xl text-gray-500">
+    <p class="mt-5 max-w-xl text-zinc-500 leading-relaxed">
       10+ years of experience building scalable Java backend systems, SQL data pipelines, and executive dashboards.
       Passionate about clean architecture, performance optimization, and AI-assisted engineering.
     </p>
 
-    <div class="mt-8 flex gap-4">
-      <a href="#projects" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-semibold transition">
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      <a href="#projects" class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-medium hover:from-indigo-700 hover:to-cyan-700 transition">
         View Projects
       </a>
-      <a href="mailto:your-email@example.com" class="px-6 py-3 border border-gray-600 hover:border-gray-400 rounded-xl font-semibold transition">
+      <a href="#email-id" class="px-6 py-3 rounded-full bg-white border border-zinc-300 text-zinc-800 font-medium hover:bg-zinc-100 transition">
         Contact Me
       </a>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section class="py-20 px-6 bg-gray-900">
+  <section class="py-24 px-6 bg-white">
     <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">Core Expertise</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <h2 class="text-3xl md:text-4xl tracking-tight font-semibold mb-14 bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">Core Expertise</h2>
+      <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-semibold mb-4 text-indigo-400">Backend Engineering</h3>
-          <p class="text-gray-400">
+        <div class="bg-gradient-to-b from-indigo-50/80 to-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-indigo-100">
+          <h3 class="text-xl font-semibold mb-4 text-zinc-900">Backend Engineering</h3>
+          <p class="text-zinc-600 leading-relaxed">
             Java, Spring Boot, REST APIs, Microservices, System Design, Performance Tuning.
           </p>
         </div>
 
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-semibold mb-4 text-cyan-400">Data Engineering</h3>
-          <p class="text-gray-400">
+        <div class="bg-gradient-to-b from-cyan-50/80 to-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-cyan-100">
+          <h3 class="text-xl font-semibold mb-4 text-zinc-900">Data Engineering</h3>
+          <p class="text-zinc-600 leading-relaxed">
             Advanced SQL, Query Optimization, Data Pipelines, Analytics Modeling, Dashboarding.
           </p>
         </div>
 
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-semibold mb-4 text-purple-400">AI & Automation</h3>
-          <p class="text-gray-400">
+        <div class="bg-gradient-to-b from-violet-50/80 to-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-violet-100">
+          <h3 class="text-xl font-semibold mb-4 text-zinc-900">AI & Automation</h3>
+          <p class="text-zinc-600 leading-relaxed">
             Local LLM integration, SQL-to-PySpark conversion tools, PR review automation, intelligent documentation.
           </p>
         </div>
@@ -67,28 +69,28 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-20 px-6">
+  <section id="projects" class="py-24 px-6 bg-zinc-50/60">
     <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">Highlighted Projects</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <h2 class="text-3xl md:text-4xl tracking-tight font-semibold mb-14 bg-gradient-to-r from-fuchsia-600 to-indigo-600 bg-clip-text text-transparent">Highlighted Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 hover:border-indigo-500 transition">
-          <h3 class="text-xl font-semibold mb-3">SQL → PySpark Converter</h3>
-          <p class="text-gray-400">
+        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-indigo-100">
+          <h3 class="text-xl font-semibold mb-3 text-zinc-900">SQL → PySpark Converter</h3>
+          <p class="text-zinc-600 leading-relaxed">
             Local LLM-powered tool to convert SQL scripts into optimized PySpark DataFrame logic while preserving transformations.
           </p>
         </div>
 
-        <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 hover:border-cyan-500 transition">
-          <h3 class="text-xl font-semibold mb-3">PR Review Assistant</h3>
-          <p class="text-gray-400">
+        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-cyan-100">
+          <h3 class="text-xl font-semibold mb-3 text-zinc-900">PR Review Assistant</h3>
+          <p class="text-zinc-600 leading-relaxed">
             AI-powered local review engine analyzing git diffs to provide performance, readability, and architectural feedback.
           </p>
         </div>
 
-        <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
-          <h3 class="text-xl font-semibold mb-3">Dashboard Narrative Generator</h3>
-          <p class="text-gray-400">
+        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-violet-100">
+          <h3 class="text-xl font-semibold mb-3 text-zinc-900">Dashboard Narrative Generator</h3>
+          <p class="text-zinc-600 leading-relaxed">
             Automatically generates executive-ready insights from analytical metrics using structured prompt engineering.
           </p>
         </div>
@@ -98,80 +100,80 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-20 px-6 bg-gray-950">
+  <section id="experience" class="py-24 px-6 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-16">Professional Experience</h2>
+      <h2 class="text-3xl md:text-4xl tracking-tight font-semibold text-center mb-16 bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent">Professional Experience</h2>
 
-      <div class="space-y-12">
+      <div class="space-y-8">
 
         <!-- Maersk -->
-        <div class="border-l-4 border-indigo-500 pl-6">
-          <h3 class="text-xl font-semibold">Senior Software Engineer</h3>
-          <p class="text-gray-400">Maersk GSC India Pvt Ltd | May 2022 – Present</p>
-          <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2">
-            <li>Contributed to the Agent Booking System by building scalable backend services using Java and microservices architecture.</li>
-            <li>Bootstrapped a complete backend service for a Telemetry solution enabling analytics and reporting capabilities.</li>
-            <li>Designed and optimized data transformation pipelines using DBT, SQL, and Dremio.</li>
-            <li>Worked on distributed systems, REST APIs, and database performance optimization.</li>
+        <div class="bg-gradient-to-b from-indigo-50/80 to-white rounded-3xl p-8 shadow-sm border border-indigo-100">
+          <h3 class="text-xl font-semibold text-zinc-900">Senior Software Engineer</h3>
+          <p class="text-zinc-500 mt-1">Maersk GSC India Pvt Ltd | May 2022 – Present</p>
+          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
+            <li>Engineered domain-driven microservices for the Agent Booking platform with event-driven integration patterns and contract-first REST APIs.</li>
+            <li>Bootstrapped a telemetry backend with OpenTelemetry instrumentation, metrics aggregation, and observability dashboards for SLI/SLO tracking.</li>
+            <li>Designed ELT transformation layers using DBT, advanced SQL modeling, and Dremio semantic datasets for analytical workloads.</li>
+            <li>Improved distributed system reliability through idempotent APIs, retry/circuit-breaker strategies, and query performance tuning.</li>
           </ul>
-          <p class="mt-3 text-sm text-gray-500">
-            Tech: Java, Microservices, SQL, DBT, Dremio, Distributed Systems
+          <p class="mt-3 text-sm text-zinc-500">
+            Tech: Java, Spring Boot, Microservices, OpenTelemetry, DBT, Dremio, SQL Optimization, Distributed Systems
           </p>
         </div>
 
         <!-- Blackhawk -->
-        <div class="border-l-4 border-cyan-500 pl-6">
-          <h3 class="text-xl font-semibold">Senior Software Engineer</h3>
-          <p class="text-gray-400">Blackhawk Network India Pvt Ltd | April 2021 – May 2022</p>
-          <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2">
-            <li>Developed backend services for Gift Card payment solutions using Java-based microservices.</li>
-            <li>Led a small team and drove technical design discussions and code quality initiatives.</li>
-            <li>Focused on high availability, performance tuning, and transaction reliability.</li>
+        <div class="bg-gradient-to-b from-cyan-50/80 to-white rounded-3xl p-8 shadow-sm border border-cyan-100">
+          <h3 class="text-xl font-semibold text-zinc-900">Senior Software Engineer</h3>
+          <p class="text-zinc-500 mt-1">Blackhawk Network India Pvt Ltd | April 2021 – May 2022</p>
+          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
+            <li>Developed payment-domain microservices for gift-card transaction orchestration with low-latency API contracts and fault-tolerant workflows.</li>
+            <li>Led a small squad, drove RFC-style design reviews, and enforced clean-code plus static-analysis quality gates in CI/CD.</li>
+            <li>Strengthened high-availability posture via resilient service patterns, thread-pool tuning, and transactional consistency controls.</li>
           </ul>
-          <p class="mt-3 text-sm text-gray-500">
-            Tech: Java, Microservices, Payment Systems, SQL, Multithreading
+          <p class="mt-3 text-sm text-zinc-500">
+            Tech: Java, Spring Boot, Microservices, Payment Systems, CI/CD, SQL, Multithreading, Reliability Engineering
           </p>
         </div>
 
         <!-- Verifone FTE -->
-        <div class="border-l-4 border-purple-500 pl-6">
-          <h3 class="text-xl font-semibold">Software Engineer</h3>
-          <p class="text-gray-400">Verifone India Pvt Ltd | May 2019 – April 2021</p>
-          <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2">
-            <li>Worked on petro payment solutions for POS and Viper terminals in a highly multithreaded environment.</li>
-            <li>Delivered scalable and resilient backend services in a transaction-heavy system.</li>
-            <li>Contributed to concurrency handling and performance optimization initiatives.</li>
+        <div class="bg-gradient-to-b from-violet-50/80 to-white rounded-3xl p-8 shadow-sm border border-violet-100">
+          <h3 class="text-xl font-semibold text-zinc-900">Software Engineer</h3>
+          <p class="text-zinc-500 mt-1">Verifone India Pvt Ltd | May 2019 – April 2021</p>
+          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
+            <li>Built petro-payment backend modules for POS and Viper terminals in a high-throughput, multithreaded runtime environment.</li>
+            <li>Delivered resilient transaction processing services with robust exception handling, timeout policies, and graceful degradation mechanisms.</li>
+            <li>Optimized concurrency primitives, lock contention paths, and JVM-level performance bottlenecks for throughput gains.</li>
           </ul>
-          <p class="mt-3 text-sm text-gray-500">
-            Tech: Java, Multithreading, POS Systems, Payment Processing, SQL
+          <p class="mt-3 text-sm text-zinc-500">
+            Tech: Java, JVM Performance, Multithreading, POS Systems, Payment Processing, SQL, Concurrency Optimization
           </p>
         </div>
 
         <!-- Varite -->
-        <div class="border-l-4 border-yellow-500 pl-6">
-          <h3 class="text-xl font-semibold">Software Engineer</h3>
-          <p class="text-gray-400">Varite India Pvt Ltd (Deployed at Verifone) | July 2017 – May 2019</p>
-          <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2">
-            <li>Designed and delivered scalable payment solutions for POS and Viper terminals used in petro transactions.</li>
-            <li>Worked closely with client teams in an on-site engagement model.</li>
-            <li>Ensured transaction stability and backend system reliability.</li>
+        <div class="bg-gradient-to-b from-amber-50/80 to-white rounded-3xl p-8 shadow-sm border border-amber-100">
+          <h3 class="text-xl font-semibold text-zinc-900">Software Engineer</h3>
+          <p class="text-zinc-500 mt-1">Varite India Pvt Ltd (Deployed at Verifone) | July 2017 – May 2019</p>
+          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
+            <li>Designed and delivered scalable payment components for POS/Viper terminals with modular service decomposition and reusable interfaces.</li>
+            <li>Collaborated directly with client engineering teams in an on-site model, translating domain requirements into production-ready APIs.</li>
+            <li>Improved transaction stability through structured logging, root-cause analysis, and proactive defect remediation workflows.</li>
           </ul>
-          <p class="mt-3 text-sm text-gray-500">
-            Tech: Java, Microservices, Payment Domain, SQL
+          <p class="mt-3 text-sm text-zinc-500">
+            Tech: Java, Microservices, Payment Domain, API Design, SQL, Production Support
           </p>
         </div>
 
         <!-- Customer Centria -->
-        <div class="border-l-4 border-gray-600 pl-6">
-          <h3 class="text-xl font-semibold">Junior Engineer</h3>
-          <p class="text-gray-400">Customer Centria Pvt Ltd | January 2016 – March 2017</p>
-          <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2">
-            <li>Worked on backend development using Java and microservices architecture.</li>
-            <li>Built REST APIs and integrated database solutions.</li>
-            <li>Gained strong foundational experience in enterprise application development.</li>
+        <div class="bg-gradient-to-b from-slate-100/90 to-white rounded-3xl p-8 shadow-sm border border-slate-200">
+          <h3 class="text-xl font-semibold text-zinc-900">Junior Engineer</h3>
+          <p class="text-zinc-500 mt-1">Customer Centria Pvt Ltd | January 2016 – March 2017</p>
+          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
+            <li>Contributed to backend feature development using Java and early-stage microservices-based service decomposition.</li>
+            <li>Implemented RESTful endpoints, relational data access layers, and integration contracts for enterprise workflows.</li>
+            <li>Built foundational expertise in SDLC, code reviews, and production troubleshooting for enterprise-grade applications.</li>
           </ul>
-          <p class="mt-3 text-sm text-gray-500">
-            Tech: Java, Microservices, SQL, REST APIs
+          <p class="mt-3 text-sm text-zinc-500">
+            Tech: Java, Microservices, REST APIs, SQL, SDLC, Debugging
           </p>
         </div>
 
@@ -179,11 +181,11 @@
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section class="py-20 px-6 bg-gray-900">
+  <!-- Professional Summary -->
+  <section class="py-24 px-6 bg-zinc-50/60">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8">Professional Summary</h2>
-      <p class="text-gray-400 leading-relaxed">
+      <h2 class="text-3xl md:text-4xl tracking-tight font-semibold mb-8 bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">Professional Summary</h2>
+      <p class="text-zinc-600 leading-relaxed text-lg max-w-3xl mx-auto">
         I am a results-driven engineer with over a decade of experience designing scalable backend systems
         and data solutions. In recent years, my focus has shifted towards building robust analytics
         pipelines and executive dashboards that drive strategic decision-making.
@@ -193,12 +195,16 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-10 text-center text-gray-500 border-t border-gray-800">
+  <footer class="py-12 text-center text-zinc-500 border-t border-zinc-200 bg-white">
     <p>© 2026 Atul Sharma. Built with GitHub Pages.</p>
     <div class="mt-4 flex justify-center gap-6">
-      <a href="https://github.com/sourac" class="hover:text-indigo-400 transition">GitHub</a>
-      <a href="https://www.linkedin.com/in/atulsharmadev/" class="hover:text-indigo-400 transition">LinkedIn</a>
-      <a href="mailto:atulsharma21772@gmail.com" class="hover:text-indigo-400 transition">Email</a>
+      <a href="https://github.com/sourac" class="text-zinc-600 hover:text-zinc-900 transition">GitHub</a>
+      <a href="https://www.linkedin.com/in/atulsharmadev/" class="text-zinc-600 hover:text-zinc-900 transition">LinkedIn</a>
+    </div>
+    <div class="mt-5 flex justify-center">
+      <button id="email-id" type="button" value="atulsharma21772@gmail.com" class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-medium hover:from-indigo-700 hover:to-cyan-700 transition">
+        Contact Me: atulsharma21772@gmail.com
+      </button>
     </div>
   </footer>
 
