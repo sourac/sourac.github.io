@@ -1,262 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atul Sharma | Backend & Data Engineer</title>
+  <title>Atul Sharma | Senior Software Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; }
+    .focus-ring:focus-visible {
+      outline: 2px solid rgb(56 189 248);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero-glow {
+      animation: drift 14s ease-in-out infinite alternate;
+    }
+    @keyframes drift {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(20px, -18px) scale(1.08); }
+    }
   </style>
 </head>
-<body class="bg-gradient-to-b from-white via-indigo-50/30 to-cyan-50/20 text-zinc-900 antialiased">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-400/30">
 
-  <!-- Hero Section -->
-  <section class="relative overflow-hidden min-h-[82vh] flex flex-col justify-center items-center text-center px-6">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-zinc-50 to-white"></div>
-    <div class="w-full max-w-6xl flex flex-col items-center gap-4 md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:gap-0 mb-2">
-      <img src="profile.jpg" alt="Atul Sharma profile photo" class="w-32 h-32 md:w-48 md:h-48 rounded-2xl object-cover border-4 border-white shadow-lg" />
-      <h1 class="text-center text-4xl md:text-8xl lg:text-[7rem] tracking-tight font-semibold leading-none bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent">
-        Atul Sharma
-      </h1>
-      <div class="hidden md:block md:w-48 md:h-48" aria-hidden="true"></div>
-    </div>
-    <div class="mt-4 flex flex-wrap justify-center gap-6">
-      <a href="https://github.com/sourac" class="inline-flex items-center gap-2 text-slate-800 hover:text-black font-medium transition">
-        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.084 3.292 9.398 7.863 10.92.575.106.785-.25.785-.556 0-.274-.01-1-.015-1.962-3.2.695-3.877-1.543-3.877-1.543-.523-1.328-1.277-1.681-1.277-1.681-1.044-.714.08-.7.08-.7 1.154.081 1.761 1.185 1.761 1.185 1.026 1.758 2.692 1.25 3.348.956.104-.743.402-1.25.732-1.538-2.555-.29-5.244-1.277-5.244-5.684 0-1.256.45-2.283 1.185-3.088-.119-.291-.514-1.462.113-3.048 0 0 .966-.31 3.166 1.179a10.94 10.94 0 0 1 2.883-.388c.977.005 1.963.132 2.883.388 2.199-1.49 3.164-1.179 3.164-1.179.628 1.586.234 2.757.115 3.048.737.805 1.184 1.832 1.184 3.088 0 4.419-2.694 5.39-5.258 5.675.413.355.78 1.054.78 2.124 0 1.534-.014 2.772-.014 3.148 0 .31.207.668.792.555C20.21 21.394 23.5 17.083 23.5 12 23.5 5.648 18.352.5 12 .5Z"/>
-        </svg>
-        <span>GitHub</span>
-      </a>
-      <a href="https://www.linkedin.com/in/atulsharmadev/" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition">
-        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.94v5.666H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126ZM7.119 20.452H3.556V9h3.563v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.978 0 1.778-.773 1.778-1.729V1.729C24 .774 23.203 0 22.225 0Z"/>
-        </svg>
-        <span>LinkedIn</span>
-      </a>
-      <button id="email-id" type="button" value="atulsharma21772@gmail.com" class="inline-flex items-center gap-2 text-emerald-700 hover:text-emerald-800 font-medium transition">
-        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 5.75A2.75 2.75 0 0 1 4.75 3h14.5A2.75 2.75 0 0 1 22 5.75v12.5A2.75 2.75 0 0 1 19.25 21H4.75A2.75 2.75 0 0 1 2 18.25V5.75Zm2.3-.25 7.2 5.4a.83.83 0 0 0 1 0l7.2-5.4H4.3Zm15.7 2.2-6.9 5.17a2.33 2.33 0 0 1-2.8 0L3.4 7.7v10.55c0 .75.6 1.35 1.35 1.35h14.5c.75 0 1.35-.6 1.35-1.35V7.7Z"/>
-        </svg>
-        <span>atulsharma21772@gmail.com</span>
-      </button>
-    </div>
-    <p class="mt-6 text-xl md:text-3xl font-medium text-zinc-600">
-      Senior Software Engineer
-    </p>
-    <p class="mt-5 max-w-xl text-zinc-500 leading-relaxed">
-      10+ years of experience building scalable Java backend systems, SQL data pipelines, and executive dashboards.
-      Strong background in Java, Spring Boot, microservices, REST API design, database optimization, and production support.
-      Experienced in leading small agile teams of 5–6 developers, mentoring engineers, and driving high-quality delivery.
-      Passionate about clean architecture, performance optimization, and AI-assisted engineering.
-    </p>
-
-    <div class="mt-10 flex flex-wrap justify-center gap-3">
-      <a href="#projects" class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-medium hover:from-indigo-700 hover:to-cyan-700 transition">
-        View Projects
-      </a>
-    </div>
-  </section>
-
-  <!-- Professional Summary -->
-  <section class="py-20 px-6 bg-zinc-50/60">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl tracking-tight font-semibold mb-8 bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">Professional Summary</h2>
-      <p class="text-zinc-600 leading-relaxed text-lg max-w-3xl mx-auto">
-        Results-driven backend and data engineer with 10+ years of experience building high-scale Java services,
-        production-grade SQL data pipelines, and analytics platforms. I focus on microservices architecture,
-        performance engineering, and AI-assisted developer workflows that improve delivery speed and system reliability.
-        Experienced in designing clean, maintainable codebases, improving API scalability, and supporting mission-critical production systems.
-        Strong collaborator in cross-functional teams, with hands-on involvement in code reviews, debugging, release management, and continuous improvement.
-      </p>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="py-24 px-6 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl md:text-4xl tracking-tight font-semibold text-center mb-16 bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent">Professional Experience</h2>
-
-      <div class="space-y-8">
-
-        <!-- Maersk -->
-        <div class="bg-gradient-to-b from-indigo-50/80 to-white rounded-3xl p-8 shadow-sm border border-indigo-100">
-          <h3 class="text-xl font-semibold text-zinc-900">Senior Software Engineer</h3>
-          <p class="text-zinc-500 mt-1">Maersk GSC India Pvt Ltd | May 2022 – Present</p>
-          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
-            <li>Engineered domain-driven microservices for the Agent Booking platform with event-driven integration patterns and contract-first REST APIs.</li>
-            <li>Bootstrapped a telemetry backend with OpenTelemetry instrumentation, metrics aggregation, and observability dashboards for SLI/SLO tracking.</li>
-            <li>Designed ELT transformation layers using DBT, advanced SQL modeling, and Dremio semantic datasets for analytical workloads.</li>
-            <li>Improved distributed system reliability through idempotent APIs, retry/circuit-breaker strategies, and query performance tuning.</li>
-          </ul>
-          <p class="mt-3 text-sm text-zinc-500">
-            Tech: Java, Spring Boot, Microservices, OpenTelemetry, DBT, Dremio, SQL Optimization, Distributed Systems
-          </p>
-        </div>
-
-        <!-- Blackhawk -->
-        <div class="bg-gradient-to-b from-cyan-50/80 to-white rounded-3xl p-8 shadow-sm border border-cyan-100">
-          <h3 class="text-xl font-semibold text-zinc-900">Senior Software Engineer</h3>
-          <p class="text-zinc-500 mt-1">Blackhawk Network India Pvt Ltd | April 2021 – May 2022</p>
-          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
-            <li>Developed payment-domain microservices for gift-card transaction orchestration with low-latency API contracts and fault-tolerant workflows.</li>
-            <li>Led a small squad, drove RFC-style design reviews, and enforced clean-code plus static-analysis quality gates in CI/CD.</li>
-            <li>Strengthened high-availability posture via resilient service patterns, thread-pool tuning, and transactional consistency controls.</li>
-          </ul>
-          <p class="mt-3 text-sm text-zinc-500">
-            Tech: Java, Spring Boot, Microservices, Payment Systems, CI/CD, SQL, Multithreading, Reliability Engineering
-          </p>
-        </div>
-
-        <!-- Verifone FTE -->
-        <div class="bg-gradient-to-b from-violet-50/80 to-white rounded-3xl p-8 shadow-sm border border-violet-100">
-          <h3 class="text-xl font-semibold text-zinc-900">Software Engineer</h3>
-          <p class="text-zinc-500 mt-1">Verifone India Pvt Ltd | May 2019 – April 2021</p>
-          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
-            <li>Built petro-payment backend modules for POS and Viper terminals in a high-throughput, multithreaded runtime environment.</li>
-            <li>Delivered resilient transaction processing services with robust exception handling, timeout policies, and graceful degradation mechanisms.</li>
-            <li>Optimized concurrency primitives, lock contention paths, and JVM-level performance bottlenecks for throughput gains.</li>
-          </ul>
-          <p class="mt-3 text-sm text-zinc-500">
-            Tech: Java, JVM Performance, Multithreading, POS Systems, Payment Processing, SQL, Concurrency Optimization
-          </p>
-        </div>
-
-        <!-- Varite -->
-        <div class="bg-gradient-to-b from-amber-50/80 to-white rounded-3xl p-8 shadow-sm border border-amber-100">
-          <h3 class="text-xl font-semibold text-zinc-900">Software Engineer</h3>
-          <p class="text-zinc-500 mt-1">Varite India Pvt Ltd (Deployed at Verifone) | July 2017 – May 2019</p>
-          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
-            <li>Designed and delivered scalable payment components for POS/Viper terminals with modular service decomposition and reusable interfaces.</li>
-            <li>Collaborated directly with client engineering teams in an on-site model, translating domain requirements into production-ready APIs.</li>
-            <li>Improved transaction stability through structured logging, root-cause analysis, and proactive defect remediation workflows.</li>
-          </ul>
-          <p class="mt-3 text-sm text-zinc-500">
-            Tech: Java, Microservices, Payment Domain, API Design, SQL, Production Support
-          </p>
-        </div>
-
-        <!-- Customer Centria -->
-        <div class="bg-gradient-to-b from-slate-100/90 to-white rounded-3xl p-8 shadow-sm border border-slate-200">
-          <h3 class="text-xl font-semibold text-zinc-900">Junior Engineer</h3>
-          <p class="text-zinc-500 mt-1">Customer Centria Pvt Ltd | January 2016 – March 2017</p>
-          <ul class="mt-4 list-disc list-inside text-zinc-600 space-y-2 leading-relaxed">
-            <li>Contributed to backend feature development using Java and early-stage microservices-based service decomposition.</li>
-            <li>Implemented RESTful endpoints, relational data access layers, and integration contracts for enterprise workflows.</li>
-            <li>Built foundational expertise in SDLC, code reviews, and production troubleshooting for enterprise-grade applications.</li>
-          </ul>
-          <p class="mt-3 text-sm text-zinc-500">
-            Tech: Java, Microservices, REST APIs, SQL, SDLC, Debugging
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="py-24 px-6 bg-white">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl tracking-tight font-semibold mb-14 bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">Core Expertise</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <div class="bg-gradient-to-b from-indigo-50/80 to-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-indigo-100">
-          <h3 class="text-xl font-semibold mb-4 text-zinc-900">Backend Engineering</h3>
-          <p class="text-zinc-600 leading-relaxed">
-            Java, Spring Boot, REST APIs, Microservices, System Design, Performance Tuning.
-          </p>
-        </div>
-
-        <div class="bg-gradient-to-b from-cyan-50/80 to-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-cyan-100">
-          <h3 class="text-xl font-semibold mb-4 text-zinc-900">Data Engineering</h3>
-          <p class="text-zinc-600 leading-relaxed">
-            Advanced SQL, Query Optimization, Data Pipelines, Analytics Modeling, Dashboarding.
-          </p>
-        </div>
-
-        <div class="bg-gradient-to-b from-violet-50/80 to-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-violet-100">
-          <h3 class="text-xl font-semibold mb-4 text-zinc-900">AI & Automation</h3>
-          <p class="text-zinc-600 leading-relaxed">
-            Local LLM integration, SQL-to-PySpark conversion tools, PR review automation, intelligent documentation.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-24 px-6 bg-zinc-50/60">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl tracking-tight font-semibold mb-14 bg-gradient-to-r from-fuchsia-600 to-indigo-600 bg-clip-text text-transparent">Highlighted Projects</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <button type="button" data-project="sql" class="project-card group relative text-left bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-indigo-100">
-          <span class="pointer-events-none absolute top-3 right-3 px-2 py-1 rounded-md bg-zinc-900 text-white text-[11px] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition">Click to know more</span>
-          <h3 class="text-xl font-semibold mb-3 text-zinc-900">SQL → PySpark Converter</h3>
-          <p class="text-zinc-600 leading-relaxed">
-            Local LLM-powered tool to convert SQL scripts into optimized PySpark DataFrame logic while preserving transformations.
-          </p>
-        </button>
-
-        <button type="button" data-project="pr" class="project-card group relative text-left bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-cyan-100">
-          <span class="pointer-events-none absolute top-3 right-3 px-2 py-1 rounded-md bg-zinc-900 text-white text-[11px] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition">Click to know more</span>
-          <h3 class="text-xl font-semibold mb-3 text-zinc-900">PR Review Assistant</h3>
-          <p class="text-zinc-600 leading-relaxed">
-            AI-powered local review engine analyzing git diffs to provide performance, readability, and architectural feedback.
-          </p>
-        </button>
-
-        <button type="button" data-project="dash" class="project-card group relative text-left bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-violet-100">
-          <span class="pointer-events-none absolute top-3 right-3 px-2 py-1 rounded-md bg-zinc-900 text-white text-[11px] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition">Click to know more</span>
-          <h3 class="text-xl font-semibold mb-3 text-zinc-900">Dashboard Narrative Generator</h3>
-          <p class="text-zinc-600 leading-relaxed">
-            Automatically generates executive-ready insights from analytical metrics using structured prompt engineering.
-          </p>
-        </button>
-
-        <button type="button" data-project="dev" class="project-card group relative text-left bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-emerald-100">
-          <span class="pointer-events-none absolute top-3 right-3 px-2 py-1 rounded-md bg-zinc-900 text-white text-[11px] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition">Click to know more</span>
-          <h3 class="text-xl font-semibold mb-3 text-zinc-900">Dev Ease</h3>
-          <p class="text-zinc-600 leading-relaxed">
-            Built a secure developer utility platform focused on data safety, enabling common development workflows and everyday tooling with privacy-first controls.
-          </p>
-        </button>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Project Detail Modal -->
-  <div id="project-modal" class="fixed inset-0 z-50 hidden">
-    <div id="project-modal-backdrop" class="absolute inset-0 bg-zinc-900/50"></div>
-    <div class="relative max-w-5xl mx-auto mt-10 md:mt-16 px-4">
-      <div class="bg-white rounded-3xl border border-zinc-200 shadow-2xl max-h-[85vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-zinc-200 px-6 py-4 flex items-center justify-between">
-          <h3 id="modal-title" class="text-2xl font-semibold text-zinc-900"></h3>
-          <button id="project-modal-close" class="px-3 py-1 rounded-lg border border-zinc-300 text-zinc-700 hover:bg-zinc-100">Close</button>
-        </div>
-        <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
-          <div>
-            <p id="modal-summary" class="text-zinc-600 leading-relaxed"></p>
-            <ul id="modal-bullets" class="mt-4 list-disc list-inside text-zinc-600 space-y-2"></ul>
-          </div>
-          <div>
-            <div id="modal-flow" class="bg-white rounded-2xl p-4 border border-zinc-200"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Ambient Background -->
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="hero-glow absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[90px]"></div>
+    <div class="hero-glow absolute top-56 -left-20 h-[26rem] w-[26rem] rounded-full bg-indigo-500/20 blur-[110px]"></div>
+    <div class="hero-glow absolute bottom-0 right-0 h-[24rem] w-[24rem] rounded-full bg-fuchsia-500/15 blur-[100px]"></div>
   </div>
 
-  <!-- Footer -->
-  <footer class="py-12 text-center text-zinc-500 border-t border-zinc-200 bg-white">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6" aria-label="Primary navigation">
+      <a href="#" class="focus-ring text-sm font-semibold tracking-[0.12em] text-slate-100">ATUL.SHARMA</a>
+      <div class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+        <a href="#about" class="focus-ring transition hover:text-white">About</a>
+        <a href="#experience" class="focus-ring transition hover:text-white">Experience</a>
+        <a href="#skills" class="focus-ring transition hover:text-white">Skills</a>
+        <a href="#projects" class="focus-ring transition hover:text-white">Projects</a>
+        <a href="#contact" class="focus-ring transition hover:text-white">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="px-4 pb-16 pt-28 md:px-6 md:pt-36">
+      <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+        <div class="fade-up rounded-3xl border border-white/15 bg-white/[0.05] p-8 shadow-2xl shadow-cyan-950/30 backdrop-blur-2xl md:p-10">
+          <p class="inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
+            <span class="h-2 w-2 rounded-full bg-cyan-300"></span>
+            Senior Software Engineer
+          </p>
+          <h1 class="mt-5 bg-gradient-to-r from-white via-cyan-200 to-violet-300 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-6xl lg:text-7xl">
+            Atul Sharma
+          </h1>
+          <p class="mt-4 text-xl font-semibold text-slate-200 md:text-2xl">Backend & Data Engineering</p>
+          <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+            Building resilient Java systems, high-performance data pipelines, and analytics-driven backend platforms for enterprise products.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://github.com/sourac" target="_blank" rel="noreferrer" class="focus-ring inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/20">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.084 3.292 9.398 7.863 10.92.575.106.785-.25.785-.556 0-.274-.01-1-.015-1.962-3.2.695-3.877-1.543-3.877-1.543-.523-1.328-1.277-1.681-1.277-1.681-1.044-.714.08-.7.08-.7 1.154.081 1.761 1.185 1.761 1.185 1.026 1.758 2.692 1.25 3.348.956.104-.743.402-1.25.732-1.538-2.555-.29-5.244-1.277-5.244-5.684 0-1.256.45-2.283 1.185-3.088-.119-.291-.514-1.462.113-3.048 0 0 .966-.31 3.166 1.179a10.94 10.94 0 0 1 2.883-.388c.977.005 1.963.132 2.883.388 2.199-1.49 3.164-1.179 3.164-1.179.628 1.586.234 2.757.115 3.048.737.805 1.184 1.832 1.184 3.088 0 4.419-2.694 5.39-5.258 5.675.413.355.78 1.054.78 2.124 0 1.534-.014 2.772-.014 3.148 0 .31.207.668.792.555C20.21 21.394 23.5 17.083 23.5 12 23.5 5.648 18.352.5 12 .5Z"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/atulsharmadev/" target="_blank" rel="noreferrer" class="focus-ring inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/20">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.94v5.666H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126ZM7.119 20.452H3.556V9h3.563v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.978 0 1.778-.773 1.778-1.729V1.729C24 .774 23.203 0 22.225 0Z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <button id="email-id" type="button" value="atulsharma21772@gmail.com" class="focus-ring inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-cyan-900/40 transition duration-200 hover:-translate-y-0.5 hover:from-cyan-400 hover:to-indigo-400">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 5.75A2.75 2.75 0 0 1 4.75 3h14.5A2.75 2.75 0 0 1 22 5.75v12.5A2.75 2.75 0 0 1 19.25 21H4.75A2.75 2.75 0 0 1 2 18.25V5.75Zm2.3-.25 7.2 5.4a.83.83 0 0 0 1 0l7.2-5.4H4.3Zm15.7 2.2-6.9 5.17a2.33 2.33 0 0 1-2.8 0L3.4 7.7v10.55c0 .75.6 1.35 1.35 1.35h14.5c.75 0 1.35-.6 1.35-1.35V7.7Z"/>
+              </svg>
+              Copy Email
+            </button>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" class="focus-ring rounded-2xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold text-slate-100 transition hover:bg-white/20">View Projects</a>
+            <a href="#contact" class="focus-ring rounded-2xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold text-slate-100 transition hover:bg-white/20">Let’s Connect</a>
+          </div>
+        </div>
+
+        <div class="fade-up rounded-3xl border border-white/15 bg-white/[0.04] p-8 shadow-2xl shadow-indigo-950/30 backdrop-blur-2xl">
+          <img src="profile.jpg" alt="Atul Sharma profile photo" class="mx-auto h-40 w-40 rounded-3xl border border-white/30 object-cover shadow-xl shadow-slate-950/40">
+          <div class="mt-8 grid grid-cols-2 gap-3">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-2xl font-bold text-white">10+</p>
+              <p class="text-xs text-slate-300">Years Experience</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-2xl font-bold text-white">5</p>
+              <p class="text-xs text-slate-300">Organizations</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-sm font-semibold text-white">Java + Spring</p>
+              <p class="text-xs text-slate-300">Scalable backend systems</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-sm font-semibold text-white">Data Focus</p>
+              <p class="text-xs text-slate-300">Pipelines + Insights</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section id="about" class="px-4 py-20 md:px-6">
+      <div class="fade-up mx-auto max-w-5xl rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-10 text-center backdrop-blur-xl">
+        <h2 class="bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl">Professional Summary</h2>
+        <p class="mx-auto mt-7 max-w-4xl text-lg leading-relaxed text-slate-300">
+          Results-driven backend and data engineer with 10+ years of experience building high-scale Java services,
+          production-grade SQL data pipelines, and analytics platforms. I focus on microservices architecture,
+          performance engineering, and AI-assisted developer workflows that improve delivery speed and system reliability.
+          Experienced in designing clean, maintainable codebases, improving API scalability, and supporting mission-critical production systems.
+          Strong collaborator in cross-functional teams, with hands-on involvement in code reviews, debugging, release management, and continuous improvement.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="px-4 pb-24 md:px-6">
+      <div class="mx-auto max-w-7xl">
+        <div class="fade-up mb-12 text-center">
+          <h2 class="bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl">Professional Experience</h2>
+          <p class="mt-3 text-slate-400">A decade of backend, platform, and data engineering delivery</p>
+        </div>
+
+        <div class="relative mx-auto max-w-5xl space-y-7 before:absolute before:bottom-2 before:left-3 before:top-2 before:w-px before:bg-gradient-to-b before:from-cyan-400/40 before:via-violet-400/30 before:to-transparent md:before:left-6">
+          <article class="fade-up relative rounded-3xl border border-white/15 bg-white/[0.05] p-7 pl-10 shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.07] md:pl-14">
+            <span class="absolute left-[7px] top-8 h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_20px_4px_rgba(103,232,249,0.55)] md:left-[19px]"></span>
+            <h3 class="text-xl font-semibold text-white">Senior Software Engineer</h3>
+            <p class="mt-1 text-sm text-slate-300">Maersk GSC India Pvt Ltd | May 2022 – Present</p>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-300">
+              <li>Engineered domain-driven microservices for the Agent Booking platform with event-driven integration patterns and contract-first REST APIs.</li>
+              <li>Bootstrapped a telemetry backend with OpenTelemetry instrumentation, metrics aggregation, and observability dashboards for SLI/SLO tracking.</li>
+              <li>Designed ELT transformation layers using DBT, advanced SQL modeling, and Dremio semantic datasets for analytical workloads.</li>
+              <li>Improved distributed system reliability through idempotent APIs, retry/circuit-breaker strategies, and query performance tuning.</li>
+            </ul>
+            <p class="mt-3 text-sm text-slate-400">Tech: Java, Spring Boot, Microservices, OpenTelemetry, DBT, Dremio, SQL Optimization, Distributed Systems</p>
+          </article>
+
+          <article class="fade-up relative rounded-3xl border border-white/15 bg-white/[0.05] p-7 pl-10 shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.07] md:pl-14">
+            <span class="absolute left-[7px] top-8 h-3 w-3 rounded-full bg-violet-300 shadow-[0_0_20px_4px_rgba(196,181,253,0.55)] md:left-[19px]"></span>
+            <h3 class="text-xl font-semibold text-white">Senior Software Engineer</h3>
+            <p class="mt-1 text-sm text-slate-300">Blackhawk Network India Pvt Ltd | April 2021 – May 2022</p>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-300">
+              <li>Developed payment-domain microservices for gift-card transaction orchestration with low-latency API contracts and fault-tolerant workflows.</li>
+              <li>Led a small squad, drove RFC-style design reviews, and enforced clean-code plus static-analysis quality gates in CI/CD.</li>
+              <li>Strengthened high-availability posture via resilient service patterns, thread-pool tuning, and transactional consistency controls.</li>
+            </ul>
+            <p class="mt-3 text-sm text-slate-400">Tech: Java, Spring Boot, Microservices, Payment Systems, CI/CD, SQL, Multithreading, Reliability Engineering</p>
+          </article>
+
+          <article class="fade-up relative rounded-3xl border border-white/15 bg-white/[0.05] p-7 pl-10 shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.07] md:pl-14">
+            <span class="absolute left-[7px] top-8 h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_20px_4px_rgba(103,232,249,0.55)] md:left-[19px]"></span>
+            <h3 class="text-xl font-semibold text-white">Software Engineer</h3>
+            <p class="mt-1 text-sm text-slate-300">Verifone India Pvt Ltd | May 2019 – April 2021</p>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-300">
+              <li>Built petro-payment backend modules for POS and Viper terminals in a high-throughput, multithreaded runtime environment.</li>
+              <li>Delivered resilient transaction processing services with robust exception handling, timeout policies, and graceful degradation mechanisms.</li>
+              <li>Optimized concurrency primitives, lock contention paths, and JVM-level performance bottlenecks for throughput gains.</li>
+            </ul>
+            <p class="mt-3 text-sm text-slate-400">Tech: Java, JVM Performance, Multithreading, POS Systems, Payment Processing, SQL, Concurrency Optimization</p>
+          </article>
+
+          <article class="fade-up relative rounded-3xl border border-white/15 bg-white/[0.05] p-7 pl-10 shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.07] md:pl-14">
+            <span class="absolute left-[7px] top-8 h-3 w-3 rounded-full bg-violet-300 shadow-[0_0_20px_4px_rgba(196,181,253,0.55)] md:left-[19px]"></span>
+            <h3 class="text-xl font-semibold text-white">Software Engineer</h3>
+            <p class="mt-1 text-sm text-slate-300">Varite India Pvt Ltd (Deployed at Verifone) | July 2017 – May 2019</p>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-300">
+              <li>Designed and delivered scalable payment components for POS/Viper terminals with modular service decomposition and reusable interfaces.</li>
+              <li>Collaborated directly with client engineering teams in an on-site model, translating domain requirements into production-ready APIs.</li>
+              <li>Improved transaction stability through structured logging, root-cause analysis, and proactive defect remediation workflows.</li>
+            </ul>
+            <p class="mt-3 text-sm text-slate-400">Tech: Java, Microservices, Payment Domain, API Design, SQL, Production Support</p>
+          </article>
+
+          <article class="fade-up relative rounded-3xl border border-white/15 bg-white/[0.05] p-7 pl-10 shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.07] md:pl-14">
+            <span class="absolute left-[7px] top-8 h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_20px_4px_rgba(103,232,249,0.55)] md:left-[19px]"></span>
+            <h3 class="text-xl font-semibold text-white">Junior Engineer</h3>
+            <p class="mt-1 text-sm text-slate-300">Customer Centria Pvt Ltd | January 2016 – March 2017</p>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-300">
+              <li>Contributed to backend feature development using Java and early-stage microservices-based service decomposition.</li>
+              <li>Implemented RESTful endpoints, relational data access layers, and integration contracts for enterprise workflows.</li>
+              <li>Built foundational expertise in SDLC, code reviews, and production troubleshooting for enterprise-grade applications.</li>
+            </ul>
+            <p class="mt-3 text-sm text-slate-400">Tech: Java, Microservices, REST APIs, SQL, SDLC, Debugging</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / CORE EXPERTISE -->
+    <section id="skills" class="px-4 pb-24 md:px-6">
+      <div class="mx-auto max-w-7xl">
+        <div class="fade-up mb-12 text-center">
+          <h2 class="bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl">Core Expertise</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="fade-up rounded-3xl border border-white/15 bg-white/[0.05] p-7 shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
+            <div class="mb-4 inline-flex rounded-xl border border-cyan-300/30 bg-cyan-300/10 p-2 text-cyan-200">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white">Backend Engineering</h3>
+            <p class="mt-3 leading-relaxed text-slate-300">Java, Spring Boot, REST APIs, Microservices, System Design, Performance Tuning.</p>
+          </article>
+
+          <article class="fade-up rounded-3xl border border-white/15 bg-white/[0.05] p-7 shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
+            <div class="mb-4 inline-flex rounded-xl border border-violet-300/30 bg-violet-300/10 p-2 text-violet-200">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 4-5"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white">Data Engineering</h3>
+            <p class="mt-3 leading-relaxed text-slate-300">Advanced SQL, Query Optimization, Data Pipelines, Analytics Modeling, Dashboarding.</p>
+          </article>
+
+          <article class="fade-up rounded-3xl border border-white/15 bg-white/[0.05] p-7 shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
+            <div class="mb-4 inline-flex rounded-xl border border-fuchsia-300/30 bg-fuchsia-300/10 p-2 text-fuchsia-200">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4Z"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white">AI & Automation</h3>
+            <p class="mt-3 leading-relaxed text-slate-300">Local LLM integration, SQL-to-PySpark conversion tools, PR review automation, intelligent documentation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="px-4 pb-24 md:px-6">
+      <div class="mx-auto max-w-7xl">
+        <div class="fade-up mb-12 text-center">
+          <h2 class="bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl">Highlighted Projects</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <button type="button" data-project="sql" class="project-card fade-up focus-ring group rounded-3xl border border-white/15 bg-white/[0.05] p-6 text-left shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
+            <div class="mb-4 flex items-center justify-between">
+              <span class="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-2.5 py-1 text-[11px] font-semibold text-cyan-200">Data + AI</span>
+              <span class="text-xs text-slate-400 transition group-hover:text-cyan-200">Open →</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white">SQL → PySpark Converter</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">Local LLM-powered tool to convert SQL scripts into optimized PySpark DataFrame logic while preserving transformations.</p>
+          </button>
+
+          <button type="button" data-project="pr" class="project-card fade-up focus-ring group rounded-3xl border border-white/15 bg-white/[0.05] p-6 text-left shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
+            <div class="mb-4 flex items-center justify-between">
+              <span class="rounded-full border border-violet-300/30 bg-violet-300/10 px-2.5 py-1 text-[11px] font-semibold text-violet-200">Developer Tooling</span>
+              <span class="text-xs text-slate-400 transition group-hover:text-violet-200">Open →</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white">PR Review Assistant</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">AI-powered local review engine analyzing git diffs to provide performance, readability, and architectural feedback.</p>
+          </button>
+
+          <button type="button" data-project="dash" class="project-card fade-up focus-ring group rounded-3xl border border-white/15 bg-white/[0.05] p-6 text-left shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
+            <div class="mb-4 flex items-center justify-between">
+              <span class="rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-2.5 py-1 text-[11px] font-semibold text-fuchsia-200">Analytics</span>
+              <span class="text-xs text-slate-400 transition group-hover:text-fuchsia-200">Open →</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white">Dashboard Narrative Generator</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">Automatically generates executive-ready insights from analytical metrics using structured prompt engineering.</p>
+          </button>
+
+          <button type="button" data-project="dev" class="project-card fade-up focus-ring group rounded-3xl border border-white/15 bg-white/[0.05] p-6 text-left shadow-lg shadow-slate-950/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08]">
+            <div class="mb-4 flex items-center justify-between">
+              <span class="rounded-full border border-emerald-300/30 bg-emerald-300/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-200">Security</span>
+              <span class="text-xs text-slate-400 transition group-hover:text-emerald-200">Open →</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white">Dev Ease</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">Built a secure developer utility platform focused on data safety, enabling common development workflows and everyday tooling with privacy-first controls.</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contact" class="px-4 pb-16 md:px-6">
+      <div class="fade-up mx-auto max-w-5xl rounded-3xl border border-white/15 bg-gradient-to-r from-cyan-500/10 via-violet-500/10 to-fuchsia-500/10 p-8 text-center shadow-2xl shadow-indigo-950/20 backdrop-blur-2xl md:p-10">
+        <h2 class="bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">Let’s Build Something Great</h2>
+        <p class="mx-auto mt-4 max-w-3xl text-slate-300">Open to backend, data, and platform engineering opportunities where architecture, reliability, and delivery quality matter.</p>
+        <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <button id="email-id-contact" type="button" value="atulsharma21772@gmail.com" class="focus-ring rounded-2xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:from-cyan-400 hover:to-indigo-400">Copy Email</button>
+          <a href="https://github.com/sourac" target="_blank" rel="noreferrer" class="focus-ring rounded-2xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:bg-white/20">GitHub</a>
+          <a href="https://www.linkedin.com/in/atulsharmadev/" target="_blank" rel="noreferrer" class="focus-ring rounded-2xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:bg-white/20">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="px-4 pb-10 text-center text-sm text-slate-400 md:px-6">
     <p>© 2026 Atul Sharma. Built with GitHub Pages.</p>
   </footer>
 
-  <div id="copy-toast" class="fixed top-6 right-6 z-50 hidden px-4 py-2 rounded-lg bg-zinc-900 text-white text-sm shadow-lg">
+  <!-- PROJECT MODAL / SIDE PANEL -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden">
+    <div id="project-modal-backdrop" class="absolute inset-0 bg-slate-950/70 opacity-0 transition-opacity duration-300"></div>
+    <aside id="project-modal-panel" class="absolute right-0 top-0 h-full w-full max-w-3xl translate-x-full border-l border-white/10 bg-slate-900/95 shadow-2xl backdrop-blur-2xl transition-transform duration-300">
+      <div class="flex h-full flex-col">
+        <div class="flex items-center justify-between border-b border-white/10 px-6 py-4">
+          <h3 id="modal-title" class="text-2xl font-semibold text-white"></h3>
+          <button id="project-modal-close" class="focus-ring rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-sm text-slate-200 hover:bg-white/20">Close</button>
+        </div>
+        <div class="grid flex-1 gap-6 overflow-y-auto p-6 md:grid-cols-2">
+          <div>
+            <p id="modal-summary" class="leading-relaxed text-slate-300"></p>
+            <ul id="modal-bullets" class="mt-5 list-disc space-y-2 pl-5 text-slate-300"></ul>
+          </div>
+          <div>
+            <div id="modal-flow" class="rounded-2xl border border-white/10 bg-white/[0.04] p-4"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- TOAST -->
+  <div id="copy-toast" class="pointer-events-none fixed right-6 top-6 z-50 hidden translate-y-2 rounded-xl border border-cyan-300/30 bg-cyan-300/20 px-4 py-2 text-sm font-medium text-cyan-100 opacity-0 backdrop-blur-md transition duration-300">
     Email ID copied
   </div>
 
@@ -273,8 +350,8 @@
           'Designed for CI-friendly usage with deterministic outputs and reviewable generated code.'
         ],
         flow: `
-          <p class="text-sm font-medium text-zinc-500 mb-2">Flow Diagram</p>
-          <svg viewBox="0 0 740 240" class="w-full h-48" xmlns="http://www.w3.org/2000/svg">
+          <p class="mb-2 text-sm font-medium text-slate-400">Flow Diagram</p>
+          <svg viewBox="0 0 740 240" class="h-48 w-full" xmlns="http://www.w3.org/2000/svg">
             <rect x="20" y="90" width="130" height="44" rx="10" fill="#e0e7ff"/><text x="85" y="117" text-anchor="middle" fill="#312e81" font-size="12">SQL Ingestion</text>
             <rect x="190" y="90" width="145" height="44" rx="10" fill="#c7d2fe"/><text x="262" y="117" text-anchor="middle" fill="#312e81" font-size="12">Query Parser</text>
             <rect x="375" y="90" width="165" height="44" rx="10" fill="#bae6fd"/><text x="457" y="117" text-anchor="middle" fill="#0c4a6e" font-size="12">Semantic Translator</text>
@@ -290,8 +367,7 @@
             <line x1="457" y1="90" x2="457" y2="60" stroke="#64748b" stroke-width="2"/>
             <line x1="457" y1="134" x2="457" y2="170" stroke="#64748b" stroke-width="2"/>
           </svg>
-        `,
-        imageNote: 'Add screenshot: conversion UI / sample input-output comparison'
+        `
       },
       pr: {
         title: 'PR Review Assistant',
@@ -304,8 +380,8 @@
           'Review-ready summary to accelerate merge decisions and reduce manual review overhead.'
         ],
         flow: `
-          <p class="text-sm font-medium text-zinc-500 mb-2">Flow Diagram</p>
-          <svg viewBox="0 0 740 240" class="w-full h-48" xmlns="http://www.w3.org/2000/svg">
+          <p class="mb-2 text-sm font-medium text-slate-400">Flow Diagram</p>
+          <svg viewBox="0 0 740 240" class="h-48 w-full" xmlns="http://www.w3.org/2000/svg">
             <circle cx="370" cy="120" r="52" fill="#e0f2fe" stroke="#7dd3fc"/>
             <text x="370" y="116" text-anchor="middle" fill="#075985" font-size="12">Review</text>
             <text x="370" y="133" text-anchor="middle" fill="#075985" font-size="12">Orchestrator</text>
@@ -322,8 +398,7 @@
             <line x1="555" y1="180" x2="415" y2="135" stroke="#64748b" stroke-width="2"/>
             <line x1="370" y1="172" x2="370" y2="190" stroke="#64748b" stroke-width="2"/>
           </svg>
-        `,
-        imageNote: 'Add screenshot: review output with recommendation snippets'
+        `
       },
       dash: {
         title: 'Dashboard Narrative Generator',
@@ -336,8 +411,8 @@
           'Supports repeatable reporting cycles and faster dashboard storytelling.'
         ],
         flow: `
-          <p class="text-sm font-medium text-zinc-500 mb-2">Flow Diagram</p>
-          <svg viewBox="0 0 740 240" class="w-full h-48" xmlns="http://www.w3.org/2000/svg">
+          <p class="mb-2 text-sm font-medium text-slate-400">Flow Diagram</p>
+          <svg viewBox="0 0 740 240" class="h-48 w-full" xmlns="http://www.w3.org/2000/svg">
             <polygon points="120,30 620,30 560,80 180,80" fill="#ede9fe"/>
             <text x="370" y="58" text-anchor="middle" fill="#5b21b6" font-size="12">Metric Connectors + KPI Normalizer</text>
 
@@ -354,8 +429,7 @@
             <line x1="370" y1="140" x2="370" y2="155" stroke="#64748b" stroke-width="2"/>
             <line x1="370" y1="195" x2="370" y2="205" stroke="#64748b" stroke-width="2"/>
           </svg>
-        `,
-        imageNote: 'Add screenshot: dashboard metrics vs generated summary panel'
+        `
       },
       dev: {
         title: 'Dev Ease',
@@ -368,8 +442,8 @@
           'Designed to improve developer productivity while strengthening data protection and compliance posture.'
         ],
         flow: `
-          <p class="text-sm font-medium text-zinc-500 mb-2">Flow Diagram</p>
-          <svg viewBox="0 0 740 240" class="w-full h-48" xmlns="http://www.w3.org/2000/svg">
+          <p class="mb-2 text-sm font-medium text-slate-400">Flow Diagram</p>
+          <svg viewBox="0 0 740 240" class="h-48 w-full" xmlns="http://www.w3.org/2000/svg">
             <rect x="30" y="100" width="145" height="44" rx="10" fill="#dcfce7"/><text x="102" y="127" text-anchor="middle" fill="#166534" font-size="12">Local Input</text>
 
             <polygon points="245,65 325,65 345,122 285,175 225,122" fill="#bbf7d0" stroke="#86efac"/>
@@ -390,77 +464,111 @@
             <line x1="560" y1="130" x2="610" y2="122" stroke="#64748b" stroke-width="2"/>
             <line x1="560" y1="188" x2="610" y2="122" stroke="#64748b" stroke-width="2"/>
           </svg>
-        `,
+        `
       }
     };
 
     const modal = document.getElementById('project-modal');
+    const modalBackdrop = document.getElementById('project-modal-backdrop');
+    const modalPanel = document.getElementById('project-modal-panel');
     const modalTitle = document.getElementById('modal-title');
     const modalSummary = document.getElementById('modal-summary');
     const modalBullets = document.getElementById('modal-bullets');
     const modalFlow = document.getElementById('modal-flow');
+    const modalClose = document.getElementById('project-modal-close');
     const projectCards = document.querySelectorAll('.project-card');
-    const closeButton = document.getElementById('project-modal-close');
-    const backdrop = document.getElementById('project-modal-backdrop');
-    const emailButton = document.getElementById('email-id');
+    const emailButtons = document.querySelectorAll('#email-id, #email-id-contact');
     const copyToast = document.getElementById('copy-toast');
+    const fadeUpTargets = document.querySelectorAll('.fade-up');
 
-    function openProjectModal(projectKey) {
+    let activeTrigger = null;
+
+    function showToast(message) {
+      copyToast.textContent = message;
+      copyToast.classList.remove('hidden', 'opacity-0', 'translate-y-2');
+      setTimeout(() => copyToast.classList.add('opacity-100', 'translate-y-0'), 10);
+      setTimeout(() => {
+        copyToast.classList.remove('opacity-100', 'translate-y-0');
+        copyToast.classList.add('opacity-0', 'translate-y-2');
+      }, 1400);
+      setTimeout(() => copyToast.classList.add('hidden'), 1800);
+    }
+
+    async function copyEmail() {
+      const emailValue = 'atulsharma21772@gmail.com';
+      try {
+        await navigator.clipboard.writeText(emailValue);
+      } catch (_) {
+        const textarea = document.createElement('textarea');
+        textarea.value = emailValue;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+      }
+      showToast('Email ID copied');
+    }
+
+    function openProjectModal(projectKey, trigger) {
       const project = projectData[projectKey];
       if (!project) return;
 
+      activeTrigger = trigger || null;
       modalTitle.textContent = project.title;
       modalSummary.textContent = project.summary;
-      modalBullets.innerHTML = project.bullets.map((item) => `<li>${item}</li>`).join('');
+      modalBullets.innerHTML = project.bullets.map(item => `<li>${item}</li>`).join('');
       modalFlow.innerHTML = project.flow;
 
       modal.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        modalBackdrop.classList.add('opacity-100');
+        modalPanel.classList.remove('translate-x-full');
+      });
       document.body.classList.add('overflow-hidden');
+      modalClose.focus();
     }
 
     function closeProjectModal() {
-      modal.classList.add('hidden');
+      if (modal.classList.contains('hidden')) return;
+      modalBackdrop.classList.remove('opacity-100');
+      modalPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
       document.body.classList.remove('overflow-hidden');
+      if (activeTrigger) {
+        activeTrigger.focus();
+        activeTrigger = null;
+      }
     }
 
-    projectCards.forEach((card) => {
+    emailButtons.forEach(button => {
+      button.addEventListener('click', copyEmail);
+    });
+
+    projectCards.forEach(card => {
       card.addEventListener('click', () => {
-        openProjectModal(card.getAttribute('data-project'));
+        openProjectModal(card.getAttribute('data-project'), card);
       });
     });
 
-    closeButton.addEventListener('click', closeProjectModal);
-    backdrop.addEventListener('click', closeProjectModal);
-
+    modalClose.addEventListener('click', closeProjectModal);
+    modalBackdrop.addEventListener('click', closeProjectModal);
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeProjectModal();
     });
 
-    if (emailButton) {
-      emailButton.addEventListener('click', async () => {
-        const emailValue = emailButton.value || 'atulsharma21772@gmail.com';
-        try {
-          await navigator.clipboard.writeText(emailValue);
-        } catch (_) {
-          const textarea = document.createElement('textarea');
-          textarea.value = emailValue;
-          textarea.style.position = 'fixed';
-          textarea.style.opacity = '0';
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand('copy');
-          textarea.remove();
-        }
-
-        if (copyToast) {
-          copyToast.classList.remove('hidden');
-          setTimeout(() => {
-            copyToast.classList.add('hidden');
-          }, 1600);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
         }
       });
-    }
+    }, { threshold: 0.12 });
+    fadeUpTargets.forEach(el => observer.observe(el));
   </script>
-
 </body>
 </html>
